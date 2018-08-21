@@ -87,7 +87,7 @@ func (msgqueue MsgQueue)pullMsgFromQueue(quName string)(<-chan amqp.Delivery) {
 	return messages
 }
 
-func createMessageQueue(connName, chName, exNamee, exType, quName string)(MsgQueue) {
+func createMessageQueue(connName, chName, exName, exType, quName string)(MsgQueue) {
 	connection := connectRbtMq(connName)
 	channel := createChannel(connection)
 	exchange := createExchange(channel, exName, exType)
